@@ -29,8 +29,8 @@ def handler(job):
     try:
         print(f"Worker Start")
         input = job["input"]
-        
-        result = input.get("prompt")
+       
+        prompt = input.get("prompt")
         seconds = input.get("seconds", 0)
         
         
@@ -39,7 +39,7 @@ def handler(job):
 
         
         logging.info(f"Request {request_id} completed successfully")
-        return result
+        return prompt
     except Exception as e:
         logging.error(f"Request {request_id} failed: {str(e)}")
         raise
