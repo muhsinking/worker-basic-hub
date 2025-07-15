@@ -30,13 +30,14 @@ def handler(job):
         print(f"Worker Start")
         input = job["input"]
         
-        prompt = input.get("prompt")
+        result = input.get("prompt")
         seconds = input.get("seconds", 0)
+        
         
         print(f"Received prompt: {prompt}")
         print(f"Sleeping for {seconds} seconds...")
+
         
-        result = process_request(job['input'])
         logging.info(f"Request {request_id} completed successfully")
         return result
     except Exception as e:
