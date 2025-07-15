@@ -28,7 +28,7 @@ def handler(job):
     
     try:
         print(f"Worker Start")
-        input = event["input"]
+        input = job["input"]
         
         prompt = input.get("prompt")
         seconds = input.get("seconds", 0)
