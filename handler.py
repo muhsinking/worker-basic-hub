@@ -3,7 +3,7 @@ import os
 import runpod
 import logging.handlers
 
-def setup_logger(log_dir="/runpod-volume/logs", log_level=logging.DEBUG):
+def setup_logger(log_dir="/runpod-volume/logs", log_level=logging.INFO):
     """
     Configures and returns a logger that writes to both the console and a
     file on a network volume.
@@ -50,7 +50,7 @@ def setup_logger(log_dir="/runpod-volume/logs", log_level=logging.DEBUG):
 # outside of the handler function.
 
 # Set log level to DEBUG to capture all levels of logs.
-logger = setup_logger(log_level=logging.DEBUG)
+logger = setup_logger(log_level=logging.INFO)
 logger = logging.LoggerAdapter(logger, {"request_id": "N/A"})
 
 logger.info("Logger initialized. Ready to process jobs.")
